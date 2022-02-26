@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class RoomSpawnCtrl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public enum Doors { top, right, bottom, left };
+    public Doors doorNeeded;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        switch (doorNeeded) {
+            case Doors.top:
+                break;
+            case Doors.right:
+                break;
+            case Doors.bottom:
+                break;
+            case Doors.left:
+                break;
+        }
     }
 }
