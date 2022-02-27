@@ -10,14 +10,13 @@ public class RoomSpawnCtrl : MonoBehaviour
     private RoomTemplates templates;
     private int randomRoomIndx;
     private GameObject[] roomList;
-    //private bool spawned = false;
 
     void Start()
     {
         templates = GameObject
             .FindGameObjectWithTag("Rooms")
             .GetComponent<RoomTemplates>();
-        Invoke("SpawnRoom", 5.0f);
+        Invoke("SpawnRoom", 0.1f);
     }
 
     void SpawnRoom()
@@ -32,19 +31,13 @@ public class RoomSpawnCtrl : MonoBehaviour
         Instantiate(
             roomList[randomRoomIndx],
             transform.position,
-            roomList[randomRoomIndx].transform.rotation
+            Quaternion.identity
         );
-        //spawned = true;
         CancelInvoke("SpawnRoom");
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("colidou");
-        if (other.CompareTag("SpawnPoint")/* && other.GetComponent<RoomSpawnCtrl>().spawned*/)
-        {
-            Debug.Log("here");
             Destroy(gameObject);
-        }
     }
 }
