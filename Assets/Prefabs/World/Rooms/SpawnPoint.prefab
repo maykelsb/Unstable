@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4022880545118831827}
   m_Layer: 0
   m_Name: SpawnPoint
-  m_TagString: Untagged
+  m_TagString: SpawnPoint
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,3 +92,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecee10f0cd1890a419a82e3ce340a3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorNeeded: 1

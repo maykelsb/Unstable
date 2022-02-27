@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3593950374748574139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 17.627766, y: 6.029017, z: -2.3484154}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7804990780246512762}
@@ -3619,8 +3619,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4022880545118831827, guid: 622a60ce1650e8641942bfc573b55221, type: 3}
+      propertyPath: doorNeeded
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6546433139126959564, guid: 622a60ce1650e8641942bfc573b55221, type: 3}
       propertyPath: m_Name
+      value: SpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546433139126959564, guid: 622a60ce1650e8641942bfc573b55221, type: 3}
+      propertyPath: m_TagString
       value: SpawnPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
