@@ -69,6 +69,8 @@ MonoBehaviour:
   - {fileID: 8426079598380243840, guid: 62a522bd351f92f43846a074c393f009, type: 3}
   - {fileID: 7364346705390321861, guid: d11430cad91e8f946b6a175dac2b0ccb, type: 3}
   noRooms: []
+  fullInternalRooms:
+  - {fileID: 6243289118126138838, guid: 830c4b1bdfc021e4cb2f99b4a378cfaa, type: 3}
   rooms:
   - {fileID: 0}
   boss: {fileID: 5426252682394722626, guid: 6365ba838103036439724e5a4637cdce, type: 3}

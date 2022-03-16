@@ -11,6 +11,9 @@ public class RoomTemplates : MonoBehaviour
 
     public GameObject[] noRooms;
 
+    [SerializeField]
+    private GameObject[] fullInternalRooms;
+
     public List<GameObject> rooms = new List<GameObject>();
 
     public GameObject boss;
@@ -28,9 +31,33 @@ public class RoomTemplates : MonoBehaviour
             if (i == (rooms.Count - 1))
                 Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
             if (i != 0)
-                rooms[i].SetActive(false);
+                Debug.Log(true);
+                //rooms[i].SetActive(false);
         }
 
         CancelInvoke("FinishDungeon");
     }
+
+    public RoomTemplates SetInteriorWall(GameObject room)
+    {
+
+        return this;
+    }
+
+    public GameObject GetFullInteriorWall(GameObject room)
+    {
+        Vector3 roomPos = room.transform.GetChild(0).transform.position;
+        Vector3 newPos = new Vector3(roomPos.x - 8, roomPos.y + 1);
+
+        GameObject interiorWall = Instantiate(
+            fullInternalRooms[Random.Range(0, fullInternalRooms.Length)],
+            newPos,
+            Quaternion.identity
+        );
+        interiorWall.transform.SetParent(room.transform);
+
+        return interiorWall;
+    }
 }
+
+
