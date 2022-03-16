@@ -59,6 +59,8 @@ public class RoomSpawnCtrl : MonoBehaviour
         );
         door.leadsTo = newRoom;
 
+        templates.GetFullInteriorWall(newRoom);
+
         // -- Saving a reference of new room
         templates.rooms.Add(newRoom);
 
@@ -95,14 +97,9 @@ public class RoomSpawnCtrl : MonoBehaviour
         return null;
     }
 
-
-
-
     void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(gameObject);
     }
 // -- Pensar no que pode ser transferido para RoomTemplate e transforma-lo no Ctrl, aqui vira apenas RoomSpawnPoint
-
 }
-
