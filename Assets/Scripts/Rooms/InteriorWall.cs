@@ -20,6 +20,11 @@ public class InteriorWall : MonoBehaviour
     [SerializeField]
     private float[] allowedY;
 
+    [SerializeField]
+    private int offsetMirrorX;
+
+
+
     private bool flippedX = false;
     private bool flippedY = false;
 
@@ -108,7 +113,8 @@ public class InteriorWall : MonoBehaviour
     {
         float newX = this.allowedX[Random.Range(0, this.allowedX.Length)];
         if (this.flippedX)
-            return newX + 9;
+            return newX + this.offsetMirrorX;
+            //return newX + 4;
 
         return newX;
     }
