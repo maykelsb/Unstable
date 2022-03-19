@@ -77,6 +77,7 @@ MonoBehaviour:
   - -4.5
   allowedY:
   - 1.5
+  offsetMirrorX: 9
 --- !u!1001 &324682750784207854
 PrefabInstance:
   m_ObjectHideFlags: 0

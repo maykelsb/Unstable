@@ -55,13 +55,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kind: 0
-  flipX: 0
+  flipX: 1
   flipY: 0
   allowedX:
   - -4.5
   allowedY:
   - 1.5
   - 0.5
+  offsetMirrorX: 9
 --- !u!1001 &194583575958366374
 PrefabInstance:
   m_ObjectHideFlags: 0
