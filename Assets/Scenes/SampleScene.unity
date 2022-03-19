@@ -447,6 +447,14 @@ PrefabInstance:
       propertyPath: internalRooms.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
+      propertyPath: fullInternalRooms.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
+      propertyPath: fullInternalRooms.Array.data[4]
+      value: 
+      objectReference: {fileID: 4132671657206042257, guid: 78aaa69666873574a9f71f2fd0fe711c, type: 3}
     - target: {fileID: 5219157173868664841, guid: 5365298e17fa06144913290850d32e5a, type: 3}
       propertyPath: m_RootOrder
       value: 2
