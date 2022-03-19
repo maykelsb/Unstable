@@ -46,15 +46,12 @@ public class RoomTemplates : MonoBehaviour
 
     public GameObject GetFullInteriorWall(GameObject room)
     {
-        Vector3 roomPos = room.transform.GetChild(0).transform.position;
-        Vector3 newPos = new Vector3(roomPos.x - 8, roomPos.y + 1);
-
         GameObject interiorWall = Instantiate(
-            fullInternalRooms[Random.Range(0, fullInternalRooms.Length)],
-            newPos,
-            Quaternion.identity
+            fullInternalRooms[Random.Range(0, fullInternalRooms.Length)]
         );
-        interiorWall.transform.SetParent(room.transform);
+        interiorWall
+            .GetComponent<InteriorWall>()
+            .SetWall(room);
 
         return interiorWall;
     }
