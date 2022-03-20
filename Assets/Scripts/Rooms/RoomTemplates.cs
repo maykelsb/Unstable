@@ -31,8 +31,7 @@ public class RoomTemplates : MonoBehaviour
             if (i == (rooms.Count - 1))
                 Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
             if (i != 0)
-                Debug.Log(true);
-            //rooms[i].SetActive(false);
+                rooms[i].SetActive(false);
         }
 
         CancelInvoke("FinishDungeon");
