@@ -32,21 +32,25 @@ public class RoomTemplates : MonoBehaviour
                 Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
             if (i != 0)
                 Debug.Log(true);
-                //rooms[i].SetActive(false);
+            //rooms[i].SetActive(false);
         }
 
         CancelInvoke("FinishDungeon");
     }
 
-    public GameObject BuildInteriorWalls(GameObject room)
+    public void BuildInteriorWalls(GameObject room)
     {
-        GameObject interiorWall = Instantiate(
-            interiorWalls[Random.Range(0, interiorWalls.Length)]
-        );
-        interiorWall
-            .GetComponent<InteriorWall>()
-            .Build(room);
-
-        return interiorWall;
+        switch (Random.Range(0, 3))
+        {
+            case 0:
+            case 1:
+                GameObject interiorWall = Instantiate(
+                    interiorWalls[Random.Range(0, interiorWalls.Length)]
+                );
+                interiorWall
+                    .GetComponent<InteriorWall>()
+                    .Build(room);
+                break;
+        }
     }
 }

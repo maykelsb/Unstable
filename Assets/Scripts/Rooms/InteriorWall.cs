@@ -23,8 +23,6 @@ public class InteriorWall : MonoBehaviour
     [SerializeField]
     private int offsetMirrorX;
 
-
-
     private bool flippedX = false;
     private bool flippedY = false;
 
@@ -65,9 +63,15 @@ public class InteriorWall : MonoBehaviour
 
     public InteriorWall Build(GameObject room)
     {
-        return SetParent(room)
-            .FlipX()
-            .SetPosition();
+        //switch (Random.Range(0, 3))
+        //{
+        //    case 0:
+                return SetParent(room)
+                    .FlipX()
+                    .SetPosition();
+            //default: // 1/2
+            //    return this;
+        //}
     }
 
     private InteriorWall SetParent(GameObject room)
@@ -82,7 +86,6 @@ public class InteriorWall : MonoBehaviour
         {
             return this;
         }
-
 
         int newX = ((Random.Range(0, 2) * 2) - 1);
         if (newX < 0)
@@ -104,17 +107,11 @@ public class InteriorWall : MonoBehaviour
         return this;
     }
 
-
-
-
-
-
     private float GetXPos()
     {
         float newX = this.allowedX[Random.Range(0, this.allowedX.Length)];
         if (this.flippedX)
             return newX + this.offsetMirrorX;
-            //return newX + 4;
 
         return newX;
     }
@@ -122,34 +119,7 @@ public class InteriorWall : MonoBehaviour
     private float GetYPos()
     {
         float newY = this.allowedY[Random.Range(0, this.allowedY.Length)];
-        //if (this.flippedX)
-        //    return newX + 9;
 
         return newY;
-    }
-
-    public InteriorWall PositionY()
-    {
-
-        // -6 / -4.5f | 2 / 1.5f
-        // 3 / 4.5f | 2 / 1.5f
-
-
-
-
-        //        Vector3 roomPos = room.transform.GetChild(0).transform.position;
-        //        Vector3 newPos = new Vector3(roomPos.x - 8, roomPos.y + 1);
-        //        Vector3 newPos = new Vector3(roomPos.x - 8, roomPos.y + 1);
-
-        //interiorWall.transform.SetParent(room.transform);
-        //interiorWall.transform.localPosition = new Vector3(-4.5f, 1.5f);
-        //interiorWall.transform.localScale = new Vector3(-1.0f, 1f, 1f);
-        //interiorWall.transform.localPosition = new Vector3(4.5f, 1.5f);
-
-
-
-
-
-        return this;
     }
 }

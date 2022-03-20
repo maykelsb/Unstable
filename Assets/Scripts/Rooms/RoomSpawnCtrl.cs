@@ -101,5 +101,9 @@ public class RoomSpawnCtrl : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+
+
+
 // -- Pensar no que pode ser transferido para RoomTemplate e transforma-lo no Ctrl, aqui vira apenas RoomSpawnPoint
 }

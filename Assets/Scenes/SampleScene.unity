@@ -441,7 +441,7 @@ PrefabInstance:
       objectReference: {fileID: 1262747918}
     - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
       propertyPath: interiorWalls.Array.size
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
       propertyPath: internalRooms.Array.size
@@ -449,6 +449,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
       propertyPath: interiorWalls.Array.data[0]
+      value: 
+      objectReference: {fileID: 822872036210150931, guid: bfbc85d561dff11419b6c9a7cee9133d, type: 3}
+    - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
+      propertyPath: interiorWalls.Array.data[1]
+      value: 
+      objectReference: {fileID: 6243289118126138838, guid: 830c4b1bdfc021e4cb2f99b4a378cfaa, type: 3}
+    - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
+      propertyPath: interiorWalls.Array.data[2]
+      value: 
+      objectReference: {fileID: 1998098949851222709, guid: 904792bc14d1aaa4ba9825dac15a823b, type: 3}
+    - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
+      propertyPath: interiorWalls.Array.data[3]
+      value: 
+      objectReference: {fileID: 2040565618474946972, guid: 0e70c3a4d8528254ea55150b9505fe91, type: 3}
+    - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
+      propertyPath: interiorWalls.Array.data[4]
+      value: 
+      objectReference: {fileID: 4132671657206042257, guid: 78aaa69666873574a9f71f2fd0fe711c, type: 3}
+    - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
+      propertyPath: interiorWalls.Array.data[5]
+      value: 
+      objectReference: {fileID: 6073477110217497089, guid: 306c19d1f17d86b4d9426030cea392ec, type: 3}
+    - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
+      propertyPath: interiorWalls.Array.data[6]
+      value: 
+      objectReference: {fileID: 3368908042156292321, guid: 50d9e58bf5f03d44cb07e59b74d5fefb, type: 3}
+    - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
+      propertyPath: interiorWalls.Array.data[7]
+      value: 
+      objectReference: {fileID: 8726706907320132735, guid: 0fb684325b9918840b99ddc06888e249, type: 3}
+    - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
+      propertyPath: interiorWalls.Array.data[8]
       value: 
       objectReference: {fileID: 8726706907320132735, guid: 0fb684325b9918840b99ddc06888e249, type: 3}
     - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
