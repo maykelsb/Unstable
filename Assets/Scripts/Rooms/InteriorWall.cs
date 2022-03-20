@@ -63,7 +63,7 @@ public class InteriorWall : MonoBehaviour
         return flippedY;
     }
 
-    public InteriorWall SetWall(GameObject room)
+    public InteriorWall Build(GameObject room)
     {
         return SetParent(room)
             .FlipX()

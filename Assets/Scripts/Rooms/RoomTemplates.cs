@@ -12,7 +12,7 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] noRooms;
 
     [SerializeField]
-    private GameObject[] fullInternalRooms;
+    private GameObject[] interiorWalls;
 
     public List<GameObject> rooms = new List<GameObject>();
 
@@ -38,23 +38,15 @@ public class RoomTemplates : MonoBehaviour
         CancelInvoke("FinishDungeon");
     }
 
-    public RoomTemplates SetInteriorWall(GameObject room)
-    {
-
-        return this;
-    }
-
-    public GameObject GetFullInteriorWall(GameObject room)
+    public GameObject BuildInteriorWalls(GameObject room)
     {
         GameObject interiorWall = Instantiate(
-            fullInternalRooms[Random.Range(0, fullInternalRooms.Length)]
+            interiorWalls[Random.Range(0, interiorWalls.Length)]
         );
         interiorWall
             .GetComponent<InteriorWall>()
-            .SetWall(room);
+            .Build(room);
 
         return interiorWall;
     }
 }
-
-
