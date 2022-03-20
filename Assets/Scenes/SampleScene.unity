@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6720292146184619880, guid: 9816adfdf3e291a4a900c189359f0c88, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6920632013147401913, guid: 9816adfdf3e291a4a900c189359f0c88, type: 3}
       propertyPath: m_TagString
       value: DoorDown
