@@ -59,7 +59,7 @@ public class RoomSpawnCtrl : MonoBehaviour
         );
         door.leadsTo = newRoom;
 
-        templates.GetFullInteriorWall(newRoom);
+        templates.BuildInteriorWalls(newRoom);
 
         // -- Saving a reference of new room
         templates.rooms.Add(newRoom);
