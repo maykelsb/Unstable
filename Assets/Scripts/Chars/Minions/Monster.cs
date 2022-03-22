@@ -91,7 +91,7 @@ public class Monster : DamageableEntity
 
     public Monster SetVelocity(Vector3 newVelocity)
     {
-        rBody.velocity = newVelocity * stats.speed;
+        rBody.velocity = newVelocity * stats.GetSpeed();
 
         return this;
     }
@@ -111,7 +111,7 @@ public class Monster : DamageableEntity
         rBody.position = Vector3.MoveTowards(
             from,
             to,
-            (stats.speed * Time.deltaTime)
+            (stats.GetSpeed() * Time.deltaTime)
         );
     }
 

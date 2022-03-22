@@ -95,7 +95,7 @@ public class PlayerCtrl : DamageableEntity
         }
 
         Vector3 moveDir = new Vector3(moveX, moveY).normalized;
-        rBody.velocity = moveDir * stats.speed;
+        rBody.velocity = moveDir * stats.GetSpeed();
     }
 
     private void Attack()
