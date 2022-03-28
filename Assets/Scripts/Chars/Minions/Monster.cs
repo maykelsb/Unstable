@@ -15,6 +15,15 @@ public class Monster : DamageableEntity
 
     public float remainingTime;
 
+    [SerializeField] private int threatLevel;
+
+    public global::System.Int32 ThreatLevel { get => threatLevel; set => threatLevel = value; }
+
+    public int GetExperiencePoints()
+    {
+        return (this.ThreatLevel * 10);
+    }
+
     protected new void Start()
     {
         base.Start();

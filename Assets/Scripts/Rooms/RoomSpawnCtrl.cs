@@ -7,15 +7,16 @@ public class RoomSpawnCtrl : MonoBehaviour
     public enum Doors { top, right, bottom, left };
     public Doors doorNeeded;
 
-    private RoomTemplates templates;
-    private int randomRoomIndx;
-    private GameObject[] roomList;
+    private RoomTemplates scptTemplates;
+    private Dungeon scptDungeon;
 
     void Start()
     {
-        templates = GameObject
-            .FindGameObjectWithTag("Rooms")
-            .GetComponent<RoomTemplates>();
+        GameObject goGameController = GameObject //@todo review this
+            .FindGameObjectWithTag("Rooms");
+        scptTemplates = goGameController.GetComponent<RoomTemplates>();
+        scptDungeon = goGameController.GetComponent<Dungeon>();
+
         Invoke("SpawnRoom", 0.1f);
     }
 
@@ -24,52 +25,61 @@ public class RoomSpawnCtrl : MonoBehaviour
         string thisDoor = "";
         string otherDoor = "";
 
+        GameObject goNewRoom;
+
         switch (doorNeeded) {
             case Doors.top:
-                thisDoor = "DoorDown";
+                thisDoor = "DoorDown"; //@todo shouldn't be an enum?
                 otherDoor = "DoorUp";
-                roomList = templates.topRooms;
+                goNewRoom = this.InstantiateRoom(scptTemplates.topRooms);
                 break;
             case Doors.right:
                 thisDoor = "DoorLeft";
                 otherDoor = "DoorRight";
-                roomList = templates.rightRooms;
+                goNewRoom = this.InstantiateRoom(scptTemplates.rightRooms);
                 break;
             case Doors.bottom:
                 thisDoor = "DoorUp";
                 otherDoor = "DoorDown";
-                roomList = templates.bottomRooms;
+                goNewRoom = this.InstantiateRoom(scptTemplates.bottomRooms);
                 break;
             case Doors.left:
+            default:
                 thisDoor = "DoorRight";
                 otherDoor = "DoorLeft";
-                roomList = templates.leftRooms;
+                goNewRoom = this.InstantiateRoom(scptTemplates.leftRooms);
                 break;
         }
-        randomRoomIndx = Random.Range(0, roomList.Length);
 
         // -- Attaching new room to its door
         Door door = FindLeadingDoor(thisDoor)
             .GetComponent<Door>();
-
-        GameObject newRoom = Instantiate(
-            roomList[randomRoomIndx],
-            transform.position,
-            Quaternion.identity
-        );
-        door.leadsTo = newRoom;
-
-        templates.BuildInteriorWalls(newRoom);
-
-        // -- Saving a reference of new room
-        templates.rooms.Add(newRoom);
+        door.leadsTo = goNewRoom;
 
         // -- Attaching last room to this door
-        Door oDoor = FindLeadingDoor2(newRoom.transform, otherDoor)
+        Door oDoor = FindLeadingDoor2(goNewRoom.transform, otherDoor)
             .GetComponent<Door>();
         oDoor.leadsTo = transform.parent.parent.gameObject;
 
         CancelInvoke("SpawnRoom");
+    }
+
+    private GameObject InstantiateRoom(GameObject[] availableRooms)
+    {
+        GameObject goNewRoom = Instantiate(
+            availableRooms[Random.Range(0, availableRooms.Length)],
+            transform.position,
+            Quaternion.identity
+        );
+
+        scptTemplates.BuildInteriorWalls(goNewRoom); //@todo this should be call upon Room.cs and not RoomTemplate.cs
+
+        //@question Couldn't this generate an overhead?
+        scptDungeon.PopulateRoom(goNewRoom); //@question Is a global control needed?
+
+        scptTemplates.rooms.Add(goNewRoom); //@todo this should be call upon Room.cs and not RoomTemplate.cs
+
+        return goNewRoom;
     }
 
     private GameObject FindLeadingDoor(string tagName)

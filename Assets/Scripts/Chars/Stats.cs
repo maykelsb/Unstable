@@ -28,30 +28,35 @@ public class Stats : MonoBehaviour
     public string preferredFood;
     public string weaponName;
 
-    private int level = 1;
+    protected int level = 1;
 
-    [SerializeField]
-    private int skill = 1;
-    [SerializeField]
-    private int speed = 1;
-    [SerializeField]
-    private int range = 1; 
-    [SerializeField]
-    private int defense;
-    [SerializeField]
-    private int life;
+    [SerializeField] protected int skill = 1;
+    [SerializeField] protected int speed = 1;
+    [SerializeField] protected int range = 1; 
+    [SerializeField] protected int defense = 1;
+    [SerializeField] protected int life = 1;
 
-    private float fullLife;
-    private float currentLife;
+    protected float fullLife;
+    protected float currentLife;
 
-    private void Start()
+    protected void Start()
     {
         fullLife = currentLife = (this.GetLife() * 3);
     }
 
-    private int GetSkill()
+    protected int GetSkill()
     {
         return (this.level + this.skill);
+    }
+
+    protected int GetLife()
+    {
+        return (this.level + this.life);
+    }
+
+    protected float GetRange()
+    {
+        return (1 + ((this.range - 1) * .5f));
     }
 
     public int GetDefense()
@@ -59,19 +64,9 @@ public class Stats : MonoBehaviour
         return (this.level + this.defense);
     }
 
-    private int GetLife()
-    {
-        return (this.level + this.life);
-    }
-
     public int GetSpeed()
     {
-        return (this.speed);
-    }
-
-    private float GetRange()
-    {
-        return (1 + ((this.range - 1) * .5f));
+        return (this.level + this.speed);
     }
 
     public float GetCurrentLife()

@@ -11,8 +11,7 @@ public class RoomTemplates : MonoBehaviour
 
     public GameObject[] noRooms;
 
-    [SerializeField]
-    private GameObject[] interiorWalls;
+    [SerializeField] private GameObject[] interiorWalls;
 
     public List<GameObject> rooms = new List<GameObject>();
 

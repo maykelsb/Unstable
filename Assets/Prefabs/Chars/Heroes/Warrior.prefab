@@ -210,16 +210,14 @@ MonoBehaviour:
   job: Warrior
   charName: Garrett Gibson
   age: 21
-  background: 
+  background: Farmboy
   preferredFood: Pork ribs
   weaponName: Claw & Scale
-  skill: 5
-  vigor: 5
-  speed: 5
+  skill: 2
+  speed: 2
   range: 1
-  fullLife: 0
-  life: 0
-  defense: 0
+  defense: 2
+  life: 2
 --- !u!95 &5144223358938999142
 Animator:
   serializedVersion: 3
