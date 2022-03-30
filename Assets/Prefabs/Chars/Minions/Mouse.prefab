@@ -180,12 +180,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41506c9ea5bb7004cb93fabd98fb1823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  job: 
-  charName: 
-  age: 0
-  background: 
-  preferredFood: 
-  weaponName: 
+  job: Rodent
+  charName: Mike, The I
+  age: 1
+  background: An ordinay rodent
+  preferredFood: Cheese
+  weaponName: Teeth
   skill: 1
   speed: 4
   range: 1

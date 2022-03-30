@@ -441,12 +441,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 279034325563597006, guid: 5365298e17fa06144913290850d32e5a, type: 3}
       propertyPath: floor1Monsters.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 279034325563597006, guid: 5365298e17fa06144913290850d32e5a, type: 3}
       propertyPath: floor1Monsters.Array.data[0]
       value: 
       objectReference: {fileID: 387180448070565626, guid: 12f2edde9a9f25c469a532f174169bad, type: 3}
+    - target: {fileID: 279034325563597006, guid: 5365298e17fa06144913290850d32e5a, type: 3}
+      propertyPath: floor1Monsters.Array.data[1]
+      value: 
+      objectReference: {fileID: 1190624192878112018, guid: 47bf4c4e5307abe4d8849a2a2e620468, type: 3}
+    - target: {fileID: 279034325563597006, guid: 5365298e17fa06144913290850d32e5a, type: 3}
+      propertyPath: floor1Monsters.Array.data[2]
+      value: 
+      objectReference: {fileID: 5789861302297164391, guid: 53a5a15bf0c161140a57ad23d8048b58, type: 3}
     - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
       propertyPath: rooms.Array.data[0]
       value: 
