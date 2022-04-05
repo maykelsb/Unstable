@@ -30,43 +30,45 @@ public class Stats : MonoBehaviour
 
     protected int level = 1;
 
-    [SerializeField] protected int skill = 1;
-    [SerializeField] protected int speed = 1;
-    [SerializeField] protected int range = 1; 
-    [SerializeField] protected int defense = 1;
-    [SerializeField] protected int life = 1;
+    [SerializeField] protected int attrSkill = 1;
+    [SerializeField] protected int attrSpeed = 1;
+    [SerializeField] protected int attrRange = 1; 
+    [SerializeField] protected int attrDefense = 1;
+    [SerializeField] protected int attrLife = 1;
 
-    protected float fullLife;
+    protected float fullLife = 0f;
     protected float currentLife;
 
-    protected void Start()
+    //protected void Start()
+    protected void Awake() //@todo Understand why Start is not called to set values
     {
-        fullLife = currentLife = (this.GetLife() * 3);
+        if (0f == this.GetFullLife())
+            this.fullLife = this.currentLife = (this.GetLife() * 3);
     }
 
     protected int GetSkill()
     {
-        return (this.level + this.skill);
+        return (this.level + this.attrSkill);
     }
 
     protected int GetLife()
     {
-        return (this.level + this.life);
+        return (this.level + this.attrLife);
     }
 
     protected float GetRange()
     {
-        return (1 + ((this.range - 1) * .5f));
+        return (1 + ((this.attrRange - 1) * .5f));
     }
 
     public int GetDefense()
     {
-        return (this.level + this.defense);
+        return (this.level + this.attrDefense);
     }
 
     public int GetSpeed()
     {
-        return (this.level + this.speed);
+        return (this.level + this.attrSpeed);
     }
 
     public float GetCurrentLife()
@@ -91,20 +93,21 @@ public class Stats : MonoBehaviour
 
     public bool IsAlive()
     {
-        return (life > 0);
+        return (this.GetCurrentLife() > 0);
     }
 
     public float CalculateDamage(float defense)
     {
         return Mathf.Max(
             (GetDamage() - defense),
-            skill
+            attrSkill
         );
     }
 
     public Stats TakeDamage(float damage)
     {
         this.currentLife -= damage;
+        Debug.Log(gameObject + "Life: " + this.GetCurrentLife() + "/" + this.GetFullLife());
         return this;
     }
 }
