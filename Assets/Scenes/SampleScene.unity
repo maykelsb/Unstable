@@ -455,6 +455,10 @@ PrefabInstance:
       propertyPath: floor1Monsters.Array.data[2]
       value: 
       objectReference: {fileID: 5789861302297164391, guid: 53a5a15bf0c161140a57ad23d8048b58, type: 3}
+    - target: {fileID: 279034325563597006, guid: 5365298e17fa06144913290850d32e5a, type: 3}
+      propertyPath: floor1Monsters.Array.data[3]
+      value: 
+      objectReference: {fileID: 5873965382314534562, guid: f8e28325d61296347a9baa2c63cccf42, type: 3}
     - target: {fileID: 5219157173868664840, guid: 5365298e17fa06144913290850d32e5a, type: 3}
       propertyPath: rooms.Array.data[0]
       value: 
