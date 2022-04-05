@@ -147,6 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669e2e83f20095349a287d41cfe6ce5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rBody: {fileID: 0}
+  remainingTime: 0
+  threatLevel: 2
 --- !u!114 &8682486640263476040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,18 +162,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41506c9ea5bb7004cb93fabd98fb1823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  job: 
-  charName: 
-  age: 0
-  background: 
-  preferredFood: 
-  weaponName: 
-  skill: 1
-  vigor: 1
-  speed: 1
+  job: Hound
+  charName: Clifford
+  age: 3
+  background: Not a red giant dog
+  preferredFood: Adventurers
+  weaponName: Pointed Fangs
+  skill: 2
+  speed: 2
   range: 1
-  fullLife: 0
-  life: 0
+  defense: 1
+  life: 2
 --- !u!95 &1251237241516356109
 Animator:
   serializedVersion: 3

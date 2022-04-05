@@ -165,6 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d547ee761e1a584481352f9da9b7862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rBody: {fileID: 0}
+  remainingTime: 0
+  threatLevel: 1
 --- !u!114 &6048921195309567478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,12 +183,11 @@ MonoBehaviour:
   job: Rodent
   charName: Mike, The I
   age: 1
-  background: 
+  background: An ordinay rodent
   preferredFood: Cheese
   weaponName: Teeth
-  skill: 2
-  vigor: 2
-  speed: 2
+  skill: 1
+  speed: 4
   range: 1
-  fullLife: 0
-  life: 0
+  defense: 0
+  life: 1

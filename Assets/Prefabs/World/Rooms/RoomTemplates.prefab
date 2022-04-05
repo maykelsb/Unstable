@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5219157173868664841}
   - component: {fileID: 5219157173868664840}
   - component: {fileID: 4421884414574823626}
+  - component: {fileID: 279034325563597006}
   m_Layer: 0
   m_Name: RoomTemplates
   m_TagString: Rooms
@@ -87,3 +88,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doors: []
+--- !u!114 &279034325563597006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5219157173868664847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691ccb3c5b5d8942b00655698438474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

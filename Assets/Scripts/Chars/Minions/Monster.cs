@@ -15,6 +15,15 @@ public class Monster : DamageableEntity
 
     public float remainingTime;
 
+    [SerializeField] private int threatLevel;
+
+    public global::System.Int32 ThreatLevel { get => threatLevel; set => threatLevel = value; }
+
+    public int GetExperiencePoints()
+    {
+        return (this.ThreatLevel * 10);
+    }
+
     protected new void Start()
     {
         base.Start();
@@ -91,7 +100,7 @@ public class Monster : DamageableEntity
 
     public Monster SetVelocity(Vector3 newVelocity)
     {
-        rBody.velocity = newVelocity * stats.speed;
+        rBody.velocity = newVelocity * stats.GetSpeed();
 
         return this;
     }
@@ -111,7 +120,7 @@ public class Monster : DamageableEntity
         rBody.position = Vector3.MoveTowards(
             from,
             to,
-            (stats.speed * Time.deltaTime)
+            (stats.GetSpeed() * Time.deltaTime)
         );
     }
 

@@ -6,22 +6,15 @@ public class InteriorWall : MonoBehaviour
 {
     public enum WallKind { Full, HalfX, HalfY }
 
-    [SerializeField]
-    private WallKind kind;
+    [SerializeField] private WallKind kind;
 
-    [SerializeField]
-    private bool flipX;
-    [SerializeField]
-    private bool flipY;
+    [SerializeField] private bool flipX;
+    [SerializeField] private bool flipY;
 
-    [SerializeField]
-    private float[] allowedX; // -- displace of 9 units (3/-6) on flip
+    [SerializeField] private float[] allowedX; // -- displace of 9 units (3/-6) on flip
+    [SerializeField] private float[] allowedY;
 
-    [SerializeField]
-    private float[] allowedY;
-
-    [SerializeField]
-    private int offsetMirrorX;
+    [SerializeField] private int offsetMirrorX;
 
     private bool flippedX = false;
     private bool flippedY = false;
@@ -63,18 +56,12 @@ public class InteriorWall : MonoBehaviour
 
     public InteriorWall Build(GameObject room)
     {
-        //switch (Random.Range(0, 3))
-        //{
-        //    case 0:
-                return SetParent(room)
-                    .FlipX()
-                    .SetPosition();
-            //default: // 1/2
-            //    return this;
-        //}
+        return SetParent(room)
+            .FlipX()
+            .SetPosition();
     }
 
-    private InteriorWall SetParent(GameObject room)
+    private InteriorWall SetParent(GameObject room) //@move to Room.cs
     {
         transform.SetParent(room.transform);
         return this;

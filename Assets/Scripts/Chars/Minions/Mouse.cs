@@ -5,7 +5,6 @@ using UnityEngine;
 public class Mouse : Monster
 {
     private Wanderable wanderable;
-    //private Stallable stallable;
 
     private new void Start()
     {

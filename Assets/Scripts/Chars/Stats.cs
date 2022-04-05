@@ -4,6 +4,23 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+    /**
+     * Garret/Warrior           |Norton/Cruzader |Daermun Drunkfoot/Barbarian |
+     * Skill: 2                 |Skill: 2        |Skill: 2                    |
+     * Speed: 2                 |Speed: 1        |Speed: 1                    |
+     * Range: 1 (1+((R-1) *.5)) |Range: 2        |Range: 1                    |
+     * Defense: 2               |Defense: 2      |Defense: 2                  |
+     * Life: 2 (x3)             |Life: 2         |Life: 3                     |
+     * -------------------------|----------------|----------------------------|
+     * Venna Valphyra/Archer
+     * Skill: 1
+     * Speed: 3
+     * Range: 3
+     * Defense: 0
+     * Life: 2
+     * -------------------------|----------------|----------------------------|
+     * */
+
     public string job;
     public string charName;
     public int age;
@@ -11,20 +28,57 @@ public class Stats : MonoBehaviour
     public string preferredFood;
     public string weaponName;
 
-    public float skill = 1;
-    public float vigor = 1;
-    public float speed = 1;
-    public int range = 1; // max 3
+    protected int level = 1;
 
-    public float fullLife;
-    public float life;
+    [SerializeField] protected int attrSkill = 1;
+    [SerializeField] protected int attrSpeed = 1;
+    [SerializeField] protected int attrRange = 1; 
+    [SerializeField] protected int attrDefense = 1;
+    [SerializeField] protected int attrLife = 1;
 
-    public float defense;
+    protected float fullLife = 0f;
+    protected float currentLife;
 
-    private void Start()
+    //protected void Start()
+    protected void Awake() //@todo Understand why Start is not called to set values
     {
-        fullLife = life = (vigor * 5);
-        defense = vigor;
+        if (0f == this.GetFullLife())
+            this.fullLife = this.currentLife = (this.GetLife() * 3);
+    }
+
+    protected int GetSkill()
+    {
+        return (this.level + this.attrSkill);
+    }
+
+    protected int GetLife()
+    {
+        return (this.level + this.attrLife);
+    }
+
+    protected float GetRange()
+    {
+        return (1 + ((this.attrRange - 1) * .5f));
+    }
+
+    public int GetDefense()
+    {
+        return (this.level + this.attrDefense);
+    }
+
+    public int GetSpeed()
+    {
+        return (this.level + this.attrSpeed);
+    }
+
+    public float GetCurrentLife()
+    {
+        return this.currentLife;
+    }
+
+    public float GetFullLife()
+    {
+        return this.fullLife;
     }
 
     public float GetAttackCooldown()
@@ -34,19 +88,26 @@ public class Stats : MonoBehaviour
 
     public float GetDamage()
     {
-        return (skill * 2);
+        return this.GetSkill();
     }
 
     public bool IsAlive()
     {
-        return (life > 0);
+        return (this.GetCurrentLife() > 0);
     }
 
     public float CalculateDamage(float defense)
     {
         return Mathf.Max(
             (GetDamage() - defense),
-            skill
+            attrSkill
         );
+    }
+
+    public Stats TakeDamage(float damage)
+    {
+        this.currentLife -= damage;
+        Debug.Log(gameObject + "Life: " + this.GetCurrentLife() + "/" + this.GetFullLife());
+        return this;
     }
 }

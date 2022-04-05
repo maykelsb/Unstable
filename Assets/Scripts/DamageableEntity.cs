@@ -46,15 +46,15 @@ public class DamageableEntity : MonoBehaviour
 
     public void TakeDamage(GameObject agressor)
     {
-        stats.life -= agressor.GetComponent<Stats>()
-            .CalculateDamage(stats.defense);
+        stats.TakeDamage(agressor.GetComponent<Stats>()
+            .CalculateDamage(stats.GetDefense()));
         StartDamageEffect();
     }
 
     public void TakeDamageFromTrap(TrapStats trap)
     {
         trap.Spring();
-        stats.life -= trap.GetDamage();
+        stats.TakeDamage(trap.GetDamage());
     }
 
     protected DamageableEntity StartDamageEffect(float duration)
