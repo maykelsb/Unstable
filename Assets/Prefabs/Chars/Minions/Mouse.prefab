@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 2695023311713154111, guid: 514c8b00fe11580458212fb04375eba6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -186,8 +186,8 @@ MonoBehaviour:
   background: An ordinay rodent
   preferredFood: Cheese
   weaponName: Teeth
-  skill: 1
-  speed: 4
-  range: 1
-  defense: 0
-  life: 1
+  attrSkill: 1
+  attrSpeed: 4
+  attrRange: 1
+  attrDefense: 0
+  attrLife: 1

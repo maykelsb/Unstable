@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -4857701473709822670, guid: 514c8b00fe11580458212fb04375eba6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -168,11 +168,11 @@ MonoBehaviour:
   background: An ordinary ophidian
   preferredFood: Moving things
   weaponName: Mouth
-  skill: 2
-  speed: 1
-  range: 1
-  defense: 2
-  life: 2
+  attrSkill: 2
+  attrSpeed: 1
+  attrRange: 1
+  attrDefense: 2
+  attrLife: 2
 --- !u!95 &7898570705751204147
 Animator:
   serializedVersion: 3
