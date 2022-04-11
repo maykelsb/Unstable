@@ -38,6 +38,12 @@ public class Monster : DamageableEntity
         ConfigEffect(EffectType.Monster);
     }
 
+    protected void OnEnable()
+    {
+        if (this.IsDead())
+            animator.SetTrigger("IsDead");
+    }
+
     public bool IsStalled()
     {
         return (State.Stalled == state);
