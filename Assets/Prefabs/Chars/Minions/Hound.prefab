@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2128518123501829246, guid: 514c8b00fe11580458212fb04375eba6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -168,11 +168,11 @@ MonoBehaviour:
   background: Not a red giant dog
   preferredFood: Adventurers
   weaponName: Pointed Fangs
-  skill: 2
-  speed: 2
-  range: 1
-  defense: 1
-  life: 2
+  attrSkill: 2
+  attrSpeed: 2
+  attrRange: 1
+  attrDefense: 1
+  attrLife: 2
 --- !u!95 &1251237241516356109
 Animator:
   serializedVersion: 3
